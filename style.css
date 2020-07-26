@@ -1,0 +1,122 @@
+body {
+    font-family: monospace;;
+    background: linear-gradient(90deg, rgba(241,30,78,1) 14%, rgba(237,72,250,1) 84%);
+    background-size: 200%;
+    animation: gradient 2s infinite;
+}
+
+
+
+.return {
+position: absolute;
+margin: 30px;
+padding: 10px;
+border: 2px solid;
+text-decoration: none;
+box-shadow: 10px 10px #e510f5;
+color: black;
+font-size: 20px;
+transition: 1.5s;
+
+
+}
+
+
+.return:hover {
+    box-shadow: -10px -10px  #00d4ff;
+    
+
+}
+
+
+.numberError {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%,-50%);
+
+}
+
+
+.error {
+color: black;
+margin: 0;
+font-size: 350px;
+letter-spacing: 10px;
+
+
+}
+
+
+.error::before, .error::after {
+content: attr(data-text);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -10; 
+
+}
+
+.error::before {
+color: #e510f5;
+animation: 1s glitch infinite
+}
+
+.error::after {
+    color: #00d4ff;
+    animation: 2s glitch infinite 
+}
+
+.notFound {
+position: absolute;
+top: 60%;
+left: 40%;
+font-size: 30px;
+
+}
+
+
+
+@keyframes glitch{
+    0% {
+    top:-5px;
+    left:-3px;
+    }
+
+    25% {
+    top:-0px;
+    left:-3px; 
+    }
+
+    50% {
+    top: 5px;
+    left: 3px;   
+    }
+    75% {
+    top: 0px;
+    left: 5px;    
+    }
+
+    100% {
+    top: 5px;
+    left:-3px;   
+    }
+}
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%; 
+    }
+
+    100% {
+        background-position: 0 50%;   
+    }
+}
